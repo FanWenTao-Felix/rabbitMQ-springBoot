@@ -3,6 +3,7 @@ package com.felix.controller;
 import com.felix.amqp.Fanout;
 import com.felix.amqp.SendTopic;
 import com.felix.amqp.Sender;
+import com.felix.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,4 +48,12 @@ public class UserController {
         fanout.sendFount(msg);
         return "Send OK.";
     }
+    @GetMapping(value = "/sendUser")
+    public String sendUser(String name) {
+        User user = new User();
+        user.setName(name);
+        sender.sendUser(user);
+        return "Send OK.";
+    }
+
 }

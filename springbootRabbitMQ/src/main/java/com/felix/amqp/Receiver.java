@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by felix on 2017/7/9.
  *
- * 监听com.felix队列
+ * 监听com.feix
  */
 
 @Component
